@@ -4,18 +4,12 @@ using CloudCustomers.api.Config;
 
 namespace CloudCustomers.api.Services
 {
-    public interface IUserService
-    {
-        public Task<List<User>> GetAllUsers();
-
-    }
-
     public class UserService : IUserService
     {
         private readonly HttpClient _httpClient;
         private readonly UsersApiOptions _apiConfig;
 
-        public UserService(HttpClient httpClient,IOptions<UsersApiOptions> apiConfig)
+        public UserService(HttpClient httpClient, IOptions<UsersApiOptions> apiConfig)
         {
             _httpClient = httpClient;
             _apiConfig = apiConfig.Value;
